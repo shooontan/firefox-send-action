@@ -1,0 +1,18 @@
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: Firefox Send action Demo
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Firefox Send action step
+        uses: ./
+        id: ffsend
+        with:
+          file: fixtures
+          expiry_time: 1m
+          password: ${{ secrets.FFSEND_PASSWORD }}
+      - name: Get the output url
+        run: echo ${{ steps.ffsend.outputs.url }}

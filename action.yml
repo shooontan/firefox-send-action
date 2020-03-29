@@ -1,0 +1,19 @@
+name: 'Firefox Send action'
+description: 'Upload file Firefox Send'
+inputs:
+  file:
+    description: 'The file(s) to upload'
+    required: true
+  expiry_time:
+    description: 'The file expiry time'
+    required: false
+  password:
+    description: 'Protect the file with a password'
+    required: false
+outputs:
+  url:
+    description: 'Share URL'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
