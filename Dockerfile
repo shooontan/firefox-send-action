@@ -1,7 +1,7 @@
 FROM debian:stable-slim
 
 ## ffsend version
-ENV FFSEND_VERSION=0.2.59
+ENV FFSEND_VERSION=0.2.61
 
 RUN \
   apt-get update -qq&& \
